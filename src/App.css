@@ -36,3 +36,72 @@
     transform: rotate(360deg);
   }
 }
+
+* {
+  border-spacing      : 0;
+  margin              : 0;
+  padding             : 0;
+}
+
+html, body {
+  height              : 100%;
+}
+
+.grid-container {
+  background-image    : url("/public/resources/terrains/tatangel.png");
+  background-repeat   : no-repeat;
+  background-size     : cover;
+  display             : grid;
+  gap                 : 10px;
+  grid-template-areas :
+    "status command command"
+    "status enemy enemy"
+    "message message message";
+  height              : 100vh;
+}
+
+.grid-container > div {
+  border-radius       : 10px;
+  font-size           : 24px;
+  padding             : 10px 10px;
+}
+
+.window {
+  background-color    : black;
+  border              : 5px solid white;
+  color               : white;
+  font-family         : "Lucida Console", "Courier New", monospace;
+}
+
+#status {
+  grid-area           : status;
+}
+
+#command-div {  
+  grid-area           : command;
+}
+
+#command-table {
+  width               : 33%;
+}
+
+#fighting {
+  background-image    : url("/public/resources/terrains/land.png");
+  background-repeat   : no-repeat;
+  background-size     : cover;
+  grid-area           : enemy;
+}
+
+#enemy {
+  background-image    : url("/public/resources/enemies/slime.gif");
+  background-repeat   : no-repeat;
+  background-size     : contain;
+  grid-area           : enemy;
+  height              : 100%;
+  width               : 45%;
+  transform           : translate(100%, 0%);
+}
+
+#message {
+  grid-area           : message;
+}
